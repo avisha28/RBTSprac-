@@ -1,0 +1,43 @@
+import ch.aplu.robotsim.*;
+
+public class SimMotor2 {
+
+    public SimMotor2() {
+
+        LegoRobot robot = new LegoRobot();
+
+        Motor motorA = new Motor(MotorPort.A);
+        Motor motorB = new Motor(MotorPort.B);
+
+        robot.addPart(motorA);
+        robot.addPart(motorB);
+
+        // Forward
+        motorA.forward();
+        motorB.forward();
+        Tools.delay(2000);
+
+        // Backward
+        motorA.backward();
+        motorB.backward();
+        Tools.delay(2000);
+
+        // Left
+        motorA.backward();
+        motorB.forward();
+        Tools.delay(1000);
+
+        // Right
+        motorA.forward();
+        motorB.backward();
+        Tools.delay(1000);
+
+        // Stop
+        motorA.stop();
+        motorB.stop();
+    }
+
+    public static void main(String[] args) {
+        new SimMotor2();
+    }
+}

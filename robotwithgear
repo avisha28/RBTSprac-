@@ -1,0 +1,37 @@
+import ch.aplu.robotsim.*;
+
+public class RobotWithGear {
+
+public RobotWithGear()
+
+{
+
+Robot robot = new Robot();
+
+Gear gear = new Gear();
+
+robot.addPart(gear);
+
+gear.forward(1000);
+
+gear.left(600);
+
+gear.forward(1000);
+
+gear.right(600);
+
+gear.forward(1000);
+
+gear.stop();
+
+}
+
+public static void main(String[] args)
+
+{
+
+new RobotWithGear();
+
+}
+
+}

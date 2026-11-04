@@ -1,0 +1,64 @@
+import ch.aplu.robotsim.*;
+
+public class SquareRobot
+{
+    public SquareRobot()
+    {
+        Robot robot = new Robot();
+        Gear gear = new Gear();
+
+        robot.addPart(gear);
+
+        int speed = 50;
+
+        // Switch case for motor speed
+        switch(speed)
+        {
+            case 50:
+                gear.setSpeed(50);
+                break;
+
+            case 70:
+                gear.setSpeed(70);
+                break;
+
+            case 100:
+                gear.setSpeed(100);
+                break;
+
+            default:
+                gear.setSpeed(50);
+        }
+
+        int count = 0;
+
+        // While loop for four sides
+        while(count < 4)
+        {
+            // For loop for movement steps
+            for(int i = 0; i < 1; i++)
+            {
+                gear.forward(1000);
+            }
+
+            // Change direction using condition
+            if(count < 3)
+            {
+                gear.left(500);
+            }
+            else
+            {
+                gear.left(500);
+            }
+
+            count++;
+        }
+
+        gear.stop();
+    }
+
+    public static void main(String[] args)
+    {
+        new SquareRobot();
+    }
+}
